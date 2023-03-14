@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restaurant Management System</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+ 
+</head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/admin" style="color: green;"><b>Restaurant Management System</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/" style="color: green;"><b>Home</b></a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: green;"><b>Menu Category</b> </a>
+            <ul class="dropdown-menu">
+                <li><a href="/add-new-category" class="dropdown-item" style="color: green;"><b>Add New Category</b></a></li>
+              <li><a href="/menuCategory" class="dropdown-item" style="color: green;"><b>View All Category</b></a></li>
+            </ul></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: green;"><b>Menu Details</b> </a>
+              <ul class="dropdown-menu">
+                  <li><a href="/add-new-menu" class="dropdown-item" style="color: green;"><b>Add New Menu</b></a></li>
+                <li><a href="/view-all-item" class="dropdown-item" style="color: green;"><b>View All Menu</b></a></li>
+              </ul></li>
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: green;"><b>Booking Details</b> </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/add-two" class="dropdown-item" style="color: green;"><b>Add Two Seater</b></a></li>
+                    <li><a href="/add-four" class="dropdown-item" style="color: green;"><b>Add Four Seater</b></a></li>
+                    <li><a href="/add-six" class="dropdown-item" style="color: green;"><b>Add Six Seater</b></a></li>
+                  <li><a href="/view-two" class="dropdown-item" style="color: green;"><b>View Two Seater</b></a></li>
+                  <li><a href="/view-four" class="dropdown-item" style="color: green;"><b>View four Seater</b></a></li>
+                  <li><a href="/view-six" class="dropdown-item" style="color: green;"><b>View Six Seater</b></a></li>
+                </ul></li>
+              <li><a href="/logout" style="color: green;"><b>Logout</b></a></li>
+        </ul>
+        <div class="navbar-header" style="float: right;"> <a class="navbar-brand" href="#" style="color: green;"><b><% if(loginUser){ %> <%= loginUser  %> <% } %></b></a></div>
+      </div>
+    </nav>
+
+             <!-- ADD NEW CATEGRY  -->
+
+
+              <div class="container">
+                <div class="row">
+
+                    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title"> Add New Menu Category</div>
+                                 </div>  
+                            <div class="panel-body" >
+                                <form action="/add-new-category" id="EmployeeForm" class="form-horizontal" method="post"  role="form" enctype="multipart/form-data">
+                                  
+                                
+                                     
+                                      <% if(errors !=''){%>
+                                        <p style="text-align: center;color:red;"><%= errors.passwordCategory.msg %></p>
+                                          <% } %>
+
+                                          <% if(success !=''){%>
+                                            <p style="text-align: center;color:green;"><%= success %></p>
+                                              <% } %>
+                                              <div class="form-group">
+                                        <label for="username" class="col-md-3 control-label">Category Name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="menuCategory" placeholder="Enter YourPassword Category Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                     
+                                        <label for="username" class="col-md-3 control-label">Category Image</label>
+                                        <div class="col-md-9">
+                                            <input type="file" class="form-control" name="file" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <!-- Button -->                                        
+                                        <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" name="submit" value="Add Category" class="btn btn-primary">   
+                                        </div>
+                                    </div>
+                                    
+                                    <p><a href="/menuCategory">View All Category Lists</a></p>
+                                     
+                                    
+                                    
+                                    
+                                </form>
+                             </div>
+                        </div>
+            
+                   
+                   
+                    
+             </div> 
+                </div>
+              </div>
+    </body>
+</html>

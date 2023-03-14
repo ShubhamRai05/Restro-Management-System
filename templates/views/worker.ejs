@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<title>Restaurant Management System</title>
+	<link rel="stylesheet"
+		href="check.css">
+	<link rel="stylesheet"
+		href="responsive.css">
+</head>
+
+<body>
+
+	<!-- for header part -->
+	<header>
+		<div class="logosec">
+			<div class="logo">Restaurant Management System</div>
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon">
+		</div>
+
+		
+
+		<div class="message">
+			<div class="circle"></div>
+			
+			<div class="dp">
+				<a href="/logout">
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+					class="dpicn"
+					alt="dp">
+				</a>
+			</div>
+		</div>
+
+	</header>
+
+	
+				</div>
+			</nav>
+		</div>
+		<div class="main">
+
+			<div class="searchbar2">
+				<input type="text"
+					name=""
+					id=""
+					placeholder="Search">
+				<div class="searchbtn">
+				<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+						class="icn srchicn"
+						alt="search-button">
+				</div>
+			</div>
+
+			
+
+			<div class="report-container">
+				<div class="report-header">
+					<h1 class="recent-Articles">Summary</h1>
+					<button class="view">View All</button>
+				</div>
+
+				<div class="report-body">
+					<div class="report-topic-heading">
+						<h3 class="t-op">User</h3>
+						<h3 class="t-op">Product Purchesed</h3>
+						<h3 class="t-op">Product Price</h3>
+						
+					</div>
+                   
+					<% if(records.length >0){
+						records.forEach(function(row){
+						%>
+                        <div class="items">
+                            <div class="item1">                    
+     
+                                
+					
+                            <% if(row.pid == "999" ) { %>
+                                                   
+                            <h3 class="t-op-nextlvl"><%= loginUser %></h3>
+							<h3 class="t-op-nextlvl"><%= row.name %></h3>
+							<h3 class="t-op-nextlvl"><%= row.price %></h3>
+							<% } %>
+						</div>
+
+						<%  }) } %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+</html>
